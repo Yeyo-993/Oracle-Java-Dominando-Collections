@@ -1,5 +1,6 @@
 package com.alura.model;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,7 +9,7 @@ public class Curso {
 
     private String nombre;
     private int tiempo;
-    private List<Aula> aulaList = new LinkedList<>();
+    private List<Aula> aulaList = new ArrayList<>();
 
     public Curso(String nombre, int tiempo) {
         this.nombre = nombre;
