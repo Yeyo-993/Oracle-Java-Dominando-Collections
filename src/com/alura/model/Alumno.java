@@ -1,5 +1,7 @@
 package com.alura.model;
 
+import java.util.Objects;
+
 public class Alumno {
 
     private String nombre;
@@ -22,5 +24,11 @@ public class Alumno {
     @Override
     public String toString(){
         return this.nombre;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Alumno alumno = (Alumno) obj;
+        return this.nombre.equals(alumno.getNombre());
     }
 }

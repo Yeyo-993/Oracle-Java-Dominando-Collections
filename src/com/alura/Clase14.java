@@ -1,5 +1,8 @@
 package com.alura;
 
+import com.alura.model.Alumno;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -10,16 +13,15 @@ public class Clase14 {
     //TODO: https://docs.oracle.com/javase/8/docs/api/index.html?java/util/Collection.html
 
     public static void main(String[] args) {
-        String alumno1 = "Luis Miguel ";
-        String alumno2 = "Pepito los palotes";
-        String alumno3 = "Juan Carlos";
-        String alumno4 = "Pedro Pedrito";
-        String alumno5 = "Gustavo Sánchez";
-        String alumno6 = "Marcia Maria";
-        String alumno7 = "Marcia Maria";
-        String alumno8 = "Gustavo Sánchez";
+        Alumno alumno1 = new Alumno("Luis Miguel", "001");
+        Alumno alumno2 = new Alumno("Pepito los palotes", "002");
+        Alumno alumno3 = new Alumno("Juan Carlos", "003");
+        Alumno alumno4 = new Alumno("Pedro Pedrito", "004");
+        Alumno alumno5 = new Alumno("Gustavo Sánchez", "005");
+        Alumno alumno6 = new Alumno("Marcia Maria", "006");
+        Alumno alumno7 = new Alumno("Claudia Patricia", "007");
 
-        Collection<String> listaAlumnos = new HashSet<>();
+        Collection<Alumno> listaAlumnos = new ArrayList<>();
 
         listaAlumnos.add(alumno1);
         listaAlumnos.add(alumno2);
@@ -28,21 +30,12 @@ public class Clase14 {
         listaAlumnos.add(alumno5);
         listaAlumnos.add(alumno6);
         listaAlumnos.add(alumno7);
-        listaAlumnos.add(alumno8);
 
-        //listaAlumnos.forEach(alumno -> {
-        //    System.out.println(alumno);
-        //});
+        Alumno alumnoNuevo = new Alumno("Luis Miguel", "001");
 
-        boolean valida = listaAlumnos.contains("Pedro pedrito");
+        System.out.println(alumno1.equals(alumnoNuevo));
+        System.out.println(listaAlumnos.contains(alumnoNuevo));
 
-        String max = listaAlumnos.stream().max(Comparator.comparingInt(String::length)).get();
-
-        listaAlumnos.removeIf(alumno -> "Pedro Pedrita".equalsIgnoreCase(alumno));
-
-        listaAlumnos.forEach(alumno -> {
-            System.out.println(alumno);
-        });
     }
 
 }
