@@ -1,18 +1,20 @@
 package com.alura;
 
 import com.alura.model.Alumno;
+import com.alura.model.Curso;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashSet;
 
-public class Clase14 {
+public class Clase15 {
 
     //TODO: https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html
     //TODO: https://docs.oracle.com/javase/8/docs/api/index.html?java/util/Collection.html
 
     public static void main(String[] args) {
+
+        Curso curso1 = new Curso("Historia", 30);
+
         Alumno alumno1 = new Alumno("Luis Miguel", "001");
         Alumno alumno2 = new Alumno("Pepito los palotes", "002");
         Alumno alumno3 = new Alumno("Juan Carlos", "003");
@@ -23,18 +25,18 @@ public class Clase14 {
 
         Collection<Alumno> listaAlumnos = new HashSet<>();
 
-        listaAlumnos.add(alumno1);
-        listaAlumnos.add(alumno2);
-        listaAlumnos.add(alumno3);
-        listaAlumnos.add(alumno4);
-        listaAlumnos.add(alumno5);
-        listaAlumnos.add(alumno6);
-        listaAlumnos.add(alumno7);
+        curso1.addAlumno(alumno1);
+        curso1.addAlumno(alumno2);
+        curso1.addAlumno(alumno3);
+        curso1.addAlumno(alumno4);
+        curso1.addAlumno(alumno5);
+        curso1.addAlumno(alumno6);
+        curso1.addAlumno(alumno7);
 
         Alumno alumnoNuevo = new Alumno("Luis Miguel", "001");
 
         System.out.println(alumno1.equals(alumnoNuevo));
-        System.out.println(listaAlumnos.contains(alumnoNuevo));
+        System.out.println(curso1.verificaAlumno(alumnoNuevo));
 
     }
 

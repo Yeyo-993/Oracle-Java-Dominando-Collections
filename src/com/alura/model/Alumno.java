@@ -31,4 +31,8 @@ public class Alumno {
         Alumno alumno = (Alumno) obj;
         return this.nombre.equals(alumno.getNombre());
     }
+
+    public int hashCode(){
+      return this.nombre.hashCode();
+    }
 }
